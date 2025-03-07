@@ -6,5 +6,5 @@ services:
     image: wazuh/wazuh-certs-generator:0.0.2
     hostname: wazuh-certs-generator
     volumes:
-      - ./config/wazuh_indexer_ssl_certs/:/certificates/
-      - ./config/certs.yml:/config/certs.yml
+      - ./wazuh_single_mod/config/wazuh_indexer_ssl_certs/:/certificates/
+      - ./wazuh_single_mod/config/certs.yml:/config/certs.yml
