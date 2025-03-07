@@ -1,0 +1,53 @@
+
+version: '3.8'
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    volumes:
+      - ./grafana:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=StrongPassword123
+    ports:
+      - "3000:3000"
+
+  loki:
+    image: grafana/loki:latest
+    volumes:
+      - ./loki/config.yml:/etc/loki/config.yml
+      - ./logs:/var/logs
+    ports:
+      - "3100:3100"
+
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - ./promtail/config.yml:/etc/promtail/config.yml
+      - ./logs:/var/logs
+    depends_on:
+      - loki
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/rules.yml:/etc/prometheus/rules.yml
+    ports:
+      - "9090:9090"
+
+  logsentinel-api:
+    build: ./logsentinel
+    ports:
+      - "5000:5000"
+
+  bitdefender-webhook:
+    build: ./integrations
+    command: python3 bitdefender_webhook.py
+    ports:
+      - "5001:5001"
+
+  wazuh-alert-parser:
+    build: ./integrations
+    command: python3 wazuh_alert_parser.py
+    ports:
+      - "5002:5002"
