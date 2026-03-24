@@ -1,0 +1,8 @@
+hosts:
+  - host_id:
+      url: "https://wazuh.manager"
+      port: 55000
+      username: wazuh-wui
+      password: "Secret"
+      run_as: false
+enrollment.dns: "X.X.X.X"

@@ -33,6 +33,7 @@ admin-key.pem
 # Wazuh Generated Files
 wazuh_single_mod/config/wazuh_cluster/*.pem
 wazuh_single_mod/config/wazuh_cluster/*.key
+wazuh_single_mod/config/wazuh_cluster/wazuh.yml
 wazuh_single_mod/certs_output/
 
 # Docker Volumes & Persistent Data
@@ -127,6 +128,7 @@ build/
 # Docker Build Files
 .dockerignore
 Dockerfile.local
+docker-compose.yml
 
 # CI/CD Secrets (if using GitHub Actions, GitLab CI, etc.)
 .github/secrets/
