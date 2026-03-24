@@ -1,0 +1,189 @@
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+.env.*.yml
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+*.der
+
+# Sensitive Configuration Files
+*.password
+*.secret
+.credentials
+secrets.yml
+
+# SSL/TLS Certificates & Keys
+wazuh_single_mod/config/wazuh_indexer_ssl_certs/
+wazuh_single_mod/config/certs/
+ssl/
+certs/
+keys/
+
+# Generated Certificate Files
+*-key.pem
+*-cert.pem
+root-ca.pem
+admin.pem
+admin-key.pem
+
+# Wazuh Generated Files
+wazuh_single_mod/config/wazuh_cluster/*.pem
+wazuh_single_mod/config/wazuh_cluster/*.key
+wazuh_single_mod/certs_output/
+
+# Docker Volumes & Persistent Data
+docker-volumes/
+volumes/
+data/
+wazuh_api_configuration/
+wazuh_etc/
+wazuh_logs/
+wazuh_queue/
+wazuh_var_multigroups/
+wazuh_integrations/
+wazuh_active_response/
+wazuh_agentless/
+wazuh_wodles/
+filebeat_etc/
+filebeat_var/
+wazuh-indexer-data/
+wazuh-dashboard-config/
+wazuh-dashboard-custom/
+
+# Application Logs
+logs/
+*.log
+*.log.*
+loki/data/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
+.env
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Config Templates (don't ignore these, they're safe):
+# !.env.example
+# !docker-compose.example.yml
+# !*.template.yml
+
+# Grafana Provisioning Secret Data
+grafana/dashboards/
+grafana/datasources/
+grafana/provisioning/**/secrets/
+grafana/var/
+
+# Prometheus Data
+prometheus/data/
+prometheus_data/
+
+# Temporary & Build Files
+.tmp/
+tmp/
+temp/
+build/
+*.o
+*.a
+
+# Docker Build Files
+.dockerignore
+Dockerfile.local
+
+# CI/CD Secrets (if using GitHub Actions, GitLab CI, etc.)
+.github/secrets/
+.gitlab/secrets/
+.gitea/secrets/
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# System Files
+*.swp
+*.swo
+*~
+.classpath
+.c9/
+*.sage.py
+
+# Node modules (if any frontend components added)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Backup files
+*.bak
+*.backup
+*~
+*.orig
+
+# Credential files from various tools
+credentials.json
+secrets.json
+token.txt
+api_key.txt
+
+# Test output
+test_results/
+coverage/
+.coverage
+.htmlcov/
+
+# Local override compose file
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# Grafana API keys exported
+grafana-api-keys.json
+
+# Wazuh Manager generated configs (before customization)
+wazuh_manager*.conf.bak
+wazuh_indexer*.yml.bak
+
+# Any .tar.gz or .zip files (unless explicitly needed)
+*.tar.gz
+*.zip
+!docker-compose*.yml
