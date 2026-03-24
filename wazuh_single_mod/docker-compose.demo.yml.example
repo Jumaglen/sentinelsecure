@@ -1,4 +1,6 @@
 # Wazuh App Copyright (C) 2017, Wazuh Inc. (License GPLv2)
+# Example docker-compose.demo.yml for local development
+# Copy this to docker-compose.demo.yml and populate environment variables from .env
 version: '3.7'
 
 services:

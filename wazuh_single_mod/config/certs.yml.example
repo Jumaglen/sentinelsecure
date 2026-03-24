@@ -1,0 +1,41 @@
+# Certificate Generation Configuration Template
+# This file defines the nodes for which SSL certificates will be generated
+# Used by: docker-compose -f wazuh_single_mod/generate-indexer-certs.yml run --rm generator
+
+nodes:
+  # Wazuh indexer server nodes
+  # Change the name/ip if using different hostnames or IPs
+  indexer:
+    - name: wazuh.indexer
+      ip: wazuh.indexer
+
+  # Wazuh server (manager) nodes
+  # Use node_type only with more than one Wazuh manager
+  # For single node: leave node_type commented out
+  server:
+    - name: wazuh.manager
+      ip: wazuh.manager
+
+  # Wazuh dashboard node
+  # Used for the web interface
+  dashboard:
+    - name: wazuh.dashboard
+      ip: wazuh.dashboard
+
+# For production deployments with multiple nodes, add them here:
+# Example with cluster:
+# indexer:
+#   - name: wazuh-indexer-1
+#     ip: 192.168.1.100
+#   - name: wazuh-indexer-2
+#     ip: 192.168.1.101
+#   - name: wazuh-indexer-3
+#     ip: 192.168.1.102
+#
+# server:
+#   - name: wazuh-manager-1
+#     ip: 192.168.1.200
+#     node_type: master
+#   - name: wazuh-manager-2
+#     ip: 192.168.1.201
+#     node_type: worker
